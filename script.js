@@ -13,7 +13,7 @@ function getDataForm(e){
     var dec_winrate = winrate / 100;
 
     var current_winrate = Math.round((wins / total) * 10000) / 100;
-    var games = Math.round((wins - (dec_winrate * total)) / (dec_winrate - 1));
+    var games = Math.round(+(wins - (dec_winrate * total)).toPrecision(7) / (dec_winrate - 1));
 
     if (games < 0){
         games = 0
